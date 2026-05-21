@@ -1,8 +1,8 @@
 **Equipo:** The Outliers 📊 
 
 Integrantes:
-* Claudia Metz
-* Marianela Pi
+* Claudia 
+* Marianela 
 
 # **Proyecto:** Trabajo Final Integrador - Modelos Predictivos  
 
