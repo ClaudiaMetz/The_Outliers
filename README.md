@@ -8,21 +8,6 @@ El objetivo principal de este proyecto es construir un modelo predictivo en Pyth
 
 A través de este análisis, buscamos identificar el peso de distintas variables externas (como las condiciones climáticas y el efecto calendario) sobre la letalidad de los accidentes, comparando el rendimiento de modelos paramétricos y de ensamble.
 
-## 📂 Estructura del Repositorio
-Siguiendo las mejores prácticas de ingeniería de software para Ciencia de Datos, este repositorio se estructura de la siguiente manera:
-
-```text
-mi_proyecto/
-├── data/                  # Datos del proyecto
-│   ├── raw/               # Dataset original de accidentes
-│   └── external/          # Datos climáticos extraídos de la API de Open-Meteo
-├── notebooks/             # Jupyter Notebooks de análisis y modelado
-│   └── siniestro_vialC.ipynb  # Notebook principal con todo el flujo de ML
-├── scripts/               # Scripts para automatización (ej. ejecución con Papermill)
-├── .gitignore             # Archivos excluidos del control de versiones (ej. claves, .env)
-├── requirements.txt       # Listado de dependencias del proyecto
-└── README.md              # Documentación técnica y de uso
-
 ## 🛠️ Stack Tecnológico y Técnicas Aplicadas
 Lenguaje: Python 3
 Manipulación y Limpieza: Pandas, NumPy.
@@ -67,6 +52,19 @@ Instalar las dependencias requeridas:
 Configurar Base de Datos: Crear un archivo .env en el directorio raíz o definir la variable de entorno MONGO_URI con la cadena de conexión real de MongoDB Atlas. Por seguridad, las credenciales nunca deben subirse al repositorio público.
 Ejecución: Abrir e iterar sobre el notebook principal (notebooks/siniestro_vialC.ipynb) o ejecutar los scripts automatizados según sea necesario.
 
+## 📂 Estructura del Repositorio
+Siguiendo las mejores prácticas de ingeniería de software para Ciencia de Datos, este repositorio se estructura de la siguiente manera:
 
+```text
+mi_proyecto/
+├── data/                  # Datos del proyecto
+│   ├── raw/               # Dataset original de accidentes
+│   └── external/          # Datos climáticos extraídos de la API de Open-Meteo
+├── notebooks/             # Jupyter Notebooks de análisis y modelado
+│   └── siniestro_vialC.ipynb  # Notebook principal con todo el flujo de ML
+├── scripts/               # Scripts para automatización (ej. ejecución con Papermill)
+├── .gitignore             # Archivos excluidos del control de versiones (ej. claves, .env)
+├── requirements.txt       # Listado de dependencias del proyecto
+README.md              # Documentación técnica y de uso
 
 
