@@ -35,9 +35,9 @@ Random Forest
 Interpretación de Métricas: Aunque los errores absolutos (MAE) son bajos, el coeficiente de determinación (R²) cercano a 0 en la Regresión Lineal y negativo en el Random Forest indica que las variables estrictamente temporales y climáticas no son suficientes para explicar la varianza en la letalidad de los accidentes. La gravedad de un siniestro está fuertemente dictada por la dinámica del choque (velocidad, uso de casco, tipo de vehículo), variables que escapan al alcance de las features actuales.
 
 ## 💡 Conclusiones y Evaluación de Hipótesis
-Hipótesis 1 (Factor Climático) - VALIDADA PARCIALMENTE: El análisis de importancia de variables (Feature Importance) extraído del modelo de ensamble confirmó que la temp_media y la precipitacion son las dos variables externas con mayor peso predictivo dentro del dataset.
-Hipótesis 2 (Efecto Calendario) - VALIDADA: El análisis exploratorio y los resultados del modelo confirmaron una marcada estacionalidad semanal. Los días Domingo y Sábado presentan los picos máximos en la probabilidad media de fatalidad, confirmando que la dinámica de movilidad del fin de semana incrementa el riesgo de letalidad.
-Hipótesis 3 (Rendimiento Algorítmico) - REFUTADA: Contrario a la expectativa inicial, el modelo paramétrico simple (Regresión Lineal) superó al modelo de ensamble (Random Forest). El Random Forest arrojó un R² negativo (-0.1223), indicando una incapacidad de generalización frente a datos invisibles para este conjunto de features específicas, mientras que la Regresión Lineal logró un comportamiento marginalmente más estable.
+* Hipótesis 1 (Factor Climático) - VALIDADA PARCIALMENTE: El análisis de importancia de variables (Feature Importance) extraído del modelo de ensamble confirmó que la temp_media y la precipitacion son las dos variables externas con mayor peso predictivo dentro del dataset.
+* Hipótesis 2 (Efecto Calendario) - VALIDADA: El análisis exploratorio y los resultados del modelo confirmaron una marcada estacionalidad semanal. Los días Domingo y Sábado presentan los picos máximos en la probabilidad media de fatalidad, confirmando que la dinámica de movilidad del fin de semana incrementa el riesgo de letalidad.
+* Hipótesis 3 (Rendimiento Algorítmico) - REFUTADA: Contrario a la expectativa inicial, el modelo paramétrico simple (Regresión Lineal) superó al modelo de ensamble (Random Forest). El Random Forest arrojó un R² negativo (-0.1223), indicando una incapacidad de generalización frente a datos invisibles para este conjunto de features específicas, mientras que la Regresión Lineal logró un comportamiento marginalmente más estable.
 
 ## 🚀 Posibles Mejoras (Next Steps)
 Para futuras iteraciones y con el fin de incrementar significativamente el R², se propone:
@@ -65,6 +65,6 @@ mi_proyecto/
 ├── scripts/               # Scripts para automatización (ej. ejecución con Papermill)
 ├── .gitignore             # Archivos excluidos del control de versiones (ej. claves, .env)
 ├── requirements.txt       # Listado de dependencias del proyecto
-README.md              # Documentación técnica y de uso
+README.md                  # Documentación técnica y de uso
 
 
