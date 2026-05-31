@@ -9,14 +9,14 @@ El objetivo principal de este proyecto es construir un modelo predictivo en Pyth
 A través de este análisis, buscamos identificar el peso de distintas variables externas (como las condiciones climáticas y el efecto calendario) sobre la letalidad de los accidentes, comparando el rendimiento de modelos paramétricos y de ensamble.
 
 ## 🛠️ Stack Tecnológico y Técnicas Aplicadas
-Lenguaje: Python 3
-Manipulación y Limpieza: Pandas, NumPy.
-Enriquecimiento de Datos: Consumo de la API de Open-Meteo (clima) y librería holidays (feriados).
-Machine Learning: scikit-learn (Pipelines, ColumnTransformer, StandardScaler, OneHotEncoder).
-Modelos Evaluados: Regresión Lineal Múltiple y Random Forest Regressor.
-Persistencia de Datos: MongoDB Atlas (NoSQL).
-Visualización: Matplotlib y Seaborn.
-Enfoque Multiparadigma: El código fue diseñado combinando la Programación Orientada a Objetos (POO) para el modelado predictivo (instanciando clases de scikit-learn como Pipeline y RandomForestRegressor), junto con los paradigmas imperativo y funcional para la manipulación estructurada y limpieza de datos mediante pandas.
+* **Lenguaje:** Python 3
+* **Manipulación y Limpieza**: Pandas, NumPy.
+* **Enriquecimiento de Datos:** Consumo de la API de Open-Meteo (clima) y librería holidays (feriados).
+* **Machine Learning:** scikit-learn (Pipelines, ColumnTransformer, StandardScaler, OneHotEncoder).
+* **Modelos Evaluados:** Regresión Lineal Múltiple y Random Forest Regressor.
+* **Persistencia de Datos:** MongoDB Atlas (NoSQL).
+* **Visualización:** Matplotlib y Seaborn.
+* **Enfoque Multiparadigma:** El código fue diseñado combinando la Programación Orientada a Objetos (POO) para el modelado predictivo (instanciando clases de scikit-learn como Pipeline y RandomForestRegressor), junto con los paradigmas imperativo y funcional para la manipulación estructurada y limpieza de datos mediante pandas.
 
 ## 📊 Metodología y Resultados Obtenidos
 El flujo de trabajo incluyó la limpieza de más de 1 millón de registros, aislando 62.076 siniestros válidos y la creación de una variable continua (probabilidad_fatalidad). Los modelos fueron evaluados sobre un 20% de datos de prueba (Test) arrojando los siguientes resultados:
@@ -32,12 +32,12 @@ Random Forest
 0.0270
 0.0178
 -0.1223
-Interpretación de Métricas: Aunque los errores absolutos (MAE) son bajos, el coeficiente de determinación (R²) cercano a 0 en la Regresión Lineal y negativo en el Random Forest indica que las variables estrictamente temporales y climáticas no son suficientes para explicar la varianza en la letalidad de los accidentes. La gravedad de un siniestro está fuertemente dictada por la dinámica del choque (velocidad, uso de casco, tipo de vehículo), variables que escapan al alcance de las features actuales.
+**Interpretación de Métricas:** Aunque los errores absolutos (MAE) son bajos, el coeficiente de determinación (R²) cercano a 0 en la Regresión Lineal y negativo en el Random Forest indica que las variables estrictamente temporales y climáticas no son suficientes para explicar la varianza en la letalidad de los accidentes. La gravedad de un siniestro está fuertemente dictada por la dinámica del choque (velocidad, uso de casco, tipo de vehículo), variables que escapan al alcance de las features actuales.
 
 ## 💡 Conclusiones y Evaluación de Hipótesis
-* Hipótesis 1 (Factor Climático) - VALIDADA PARCIALMENTE: El análisis de importancia de variables (Feature Importance) extraído del modelo de ensamble confirmó que la temp_media y la precipitacion son las dos variables externas con mayor peso predictivo dentro del dataset.
-* Hipótesis 2 (Efecto Calendario) - VALIDADA: El análisis exploratorio y los resultados del modelo confirmaron una marcada estacionalidad semanal. Los días Domingo y Sábado presentan los picos máximos en la probabilidad media de fatalidad, confirmando que la dinámica de movilidad del fin de semana incrementa el riesgo de letalidad.
-* Hipótesis 3 (Rendimiento Algorítmico) - REFUTADA: Contrario a la expectativa inicial, el modelo paramétrico simple (Regresión Lineal) superó al modelo de ensamble (Random Forest). El Random Forest arrojó un R² negativo (-0.1223), indicando una incapacidad de generalización frente a datos invisibles para este conjunto de features específicas, mientras que la Regresión Lineal logró un comportamiento marginalmente más estable.
+* **Hipótesis 1 (Factor Climático)** - VALIDADA PARCIALMENTE: El análisis de importancia de variables (Feature Importance) extraído del modelo de ensamble confirmó que la temp_media y la precipitacion son las dos variables externas con mayor peso predictivo dentro del dataset.
+* **Hipótesis 2 (Efecto Calendario)** - VALIDADA: El análisis exploratorio y los resultados del modelo confirmaron una marcada estacionalidad semanal. Los días Domingo y Sábado presentan los picos máximos en la probabilidad media de fatalidad, confirmando que la dinámica de movilidad del fin de semana incrementa el riesgo de letalidad.
+* **Hipótesis 3 (Rendimiento Algorítmico)** - REFUTADA: Contrario a la expectativa inicial, el modelo paramétrico simple (Regresión Lineal) superó al modelo de ensamble (Random Forest). El Random Forest arrojó un R² negativo (-0.1223), indicando una incapacidad de generalización frente a datos invisibles para este conjunto de features específicas, mientras que la Regresión Lineal logró un comportamiento marginalmente más estable.
 
 ## 🚀 Posibles Mejoras (Next Steps)
 Para futuras iteraciones y con el fin de incrementar significativamente el R², se propone:
