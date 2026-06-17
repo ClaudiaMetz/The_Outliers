@@ -67,6 +67,10 @@ El flujo de trabajo se estructuró combinando paradigmas de Programación Orient
 * Python 3.9+
 * Cuenta de MongoDB Atlas (Configurar URI en el archivo `.env` o directamente en la notebook).
 
+## Declaración de Uso de Herramientas de IA 
+En cumplimiento con los lineamientos de la asignatura, el equipo declara que se utilizaron asistentes de Inteligencia Artificial (Claude, Gemini) exclusivamente como herramienta de apoyo para la generación de boilerplate de código y asistencia en la redacción y estructuración de este documento. Todo el diseño experimental, la toma de decisiones técnicas, el análisis de las métricas y la justificación de las hipótesis presentadas son de autoría propia y exclusiva del equipo "The Outliers"
+
+
 ## 📂 Estructura del Repositorio
 Siguiendo las mejores prácticas de ingeniería de software para Ciencia de Datos, este repositorio se estructura de la siguiente manera:
 
