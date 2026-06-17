@@ -27,11 +27,10 @@ La siniestralidad vial es un fenómeno complejo y multifactorial. El objetivo de
 ## 📊 Interfaz de Visualización (Dashboard BI)
 Se desarrolló una aplicación interactiva para la exploración multidimensional del dataset y la auditoría de los modelos predictivos.
 
-*(Nota: Reemplazar estas imágenes subiendo las capturas reales a la carpeta raíz del repositorio)*
 > ![Dashboard Resumen](https://github.com/Marian2057/The_Outliers/blob/main/Material_Sustentacion/Dashboard/Pantalla-1.JPG)
 > *Vista general: Evolución histórica y perfil de vulnerabilidad.*
 
-> ![Dashboard Métricas](enlace_a_tu_imagen_metricas.png)
+> ![Dashboard Métricas](https://github.com/Marian2057/The_Outliers/blob/main/Material_Sustentacion/Dashboard/Pantalla-3.JPG)
 > *Auditoría algorítmica: Comparación de rendimiento RMSE/MAE y análisis Real vs. Predicho.*
 
 ---
