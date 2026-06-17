@@ -30,7 +30,7 @@ Se desarrolló una aplicación interactiva para la exploración multidimensional
 > ![Dashboard Resumen](https://github.com/Marian2057/The_Outliers/blob/main/Material_Sustentacion/Dashboard/Pantalla-1.JPG)
 > *Vista general: Evolución histórica y perfil de vulnerabilidad.*
 >
-> > ![Dashboard Resumen](https://github.com/Marian2057/The_Outliers/blob/main/Material_Sustentacion/Dashboard/Pantalla-2.JPG)
+> ![Dashboard Resumen](https://github.com/Marian2057/The_Outliers/blob/main/Material_Sustentacion/Dashboard/Pantalla-2.JPG)
 > *Clima y Calendario: Probabilidad de fatalidad promedio: Laborales vs Fines de Semanas vs Feriados.*
 
 > ![Dashboard Métricas](https://github.com/Marian2057/The_Outliers/blob/main/Material_Sustentacion/Dashboard/Pantalla-3.JPG)
