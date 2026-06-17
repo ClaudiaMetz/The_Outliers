@@ -56,12 +56,12 @@ Ejecución: Abrir e iterar sobre el notebook principal (notebooks/siniestro_vial
 Siguiendo las mejores prácticas de ingeniería de software para Ciencia de Datos, este repositorio se estructura de la siguiente manera:
 
 ```text
-mi_proyecto/
+Material_Sustentacion/
 ├── data/                  # Datos del proyecto
 │   ├── raw/               # Dataset original de accidentes
 │   └── external/          # Datos climáticos extraídos de la API de Open-Meteo
 ├── notebooks/             # Jupyter Notebooks de análisis y modelado
-│   └── siniestro_vialC.ipynb  # Notebook principal con todo el flujo de ML
+│   └── siniestro_vialF.ipynb  # Notebook principal con todo el flujo de ML
 ├── scripts/               # Scripts para automatización (ej. ejecución con Papermill)
 ├── .gitignore             # Archivos excluidos del control de versiones (ej. claves, .env)
 ├── requirements.txt       # Listado de dependencias del proyecto
