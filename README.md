@@ -6,6 +6,8 @@
 ![Scikit-Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![Dash](https://img.shields.io/badge/Dash_Plotly-0F1117?style=for-the-badge&logo=plotly&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlebard&logoColor=white)
 
 ## 📖 Resumen Ejecutivo
 Este proyecto desarrolla un pipeline analítico end-to-end para evaluar y predecir la probabilidad de víctimas fatales en siniestros viales en la Ciudad Autónoma de Buenos Aires (2019-2024). 
