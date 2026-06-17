@@ -82,6 +82,9 @@ Material_Sustentacion/
 ├── notebooks/                   # Jupyter Notebooks de análisis y modelado
 │   └── siniestro_vialF.ipynb    # Notebook principal con todo el flujo de ML
 ├── Automatizaciones/            # Scripts para automatización con Papermill
+│   ├── resultado_exp_1          # Resultado de la automatización 1
+│   └── resultado_exp_2          # Resultado de la automatización 2
+│   └── resultado_exp_3          # Resultado de la automatización 3
 ├── .gitignore                   # Archivos excluidos del control de versiones (ej. claves, .env)
 ├── requirements.txt             # Listado de dependencias del proyecto
 ├── Dashboard/                   # Capturas de las pantallas del dashboard
