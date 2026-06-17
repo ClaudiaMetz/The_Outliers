@@ -70,14 +70,18 @@ Siguiendo las mejores prácticas de ingeniería de software para Ciencia de Dato
 
 ```text
 Material_Sustentacion/
-├── data/                  # Datos del proyecto
-│   ├── datos/               # Dataset original de accidentes
-│   └── external/          # Datos climáticos extraídos de la API de Open-Meteo
-├── notebooks/             # Jupyter Notebooks de análisis y modelado
-│   └── siniestro_vialF.ipynb  # Notebook principal con todo el flujo de ML
-├── Automatizaciones/               # Scripts para automatización con Papermill
-├── .gitignore             # Archivos excluidos del control de versiones (ej. claves, .env)
-├── requirements.txt       # Listado de dependencias del proyecto
-README.md                  # Documentación técnica y de uso
+├── data/                        # Datos del proyecto
+│   ├── datos/                   # Dataset original de accidentes
+│   └── external/                # Datos climáticos extraídos de la API de Open-Meteo
+├── notebooks/                   # Jupyter Notebooks de análisis y modelado
+│   └── siniestro_vialF.ipynb    # Notebook principal con todo el flujo de ML
+├── Automatizaciones/            # Scripts para automatización con Papermill
+├── .gitignore                   # Archivos excluidos del control de versiones (ej. claves, .env)
+├── requirements.txt             # Listado de dependencias del proyecto
+├── Dashboard/                   # Capturas de las pantallas del dashboard
+├── Informe/                     # Documentación
+│   └── Informe del proyecto     # Informe del preoyecto
+│   └── presentacion             # Presentación
+README.md                        # Documentación técnica y de uso
 
 
