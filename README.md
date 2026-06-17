@@ -28,7 +28,7 @@ La siniestralidad vial es un fenómeno complejo y multifactorial. El objetivo de
 Se desarrolló una aplicación interactiva para la exploración multidimensional del dataset y la auditoría de los modelos predictivos.
 
 *(Nota: Reemplazar estas imágenes subiendo las capturas reales a la carpeta raíz del repositorio)*
-> ![Dashboard Resumen](enlace_a_tu_imagen_resumen.png)
+> ![Dashboard Resumen]([enlace_a_tu_imagen_resumen.png](https://github.com/Marian2057/The_Outliers/blob/main/Material_Sustentacion/Dashboard/Pantalla-1.JPG))
 > *Vista general: Evolución histórica y perfil de vulnerabilidad.*
 
 > ![Dashboard Métricas](enlace_a_tu_imagen_metricas.png)
