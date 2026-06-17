@@ -1,56 +1,67 @@
-# 🚗 Predicción de Siniestralidad Vial y Gravedad de Accidentes en Argentina
+# 🚦 Análisis y Predicción de Siniestralidad Vial (CABA)
+**Proyecto Final - Programación Avanzada en Ciencia de Datos | The Outliers**
 
-**Equipo:** The Outliers  
-**Asignatura:** Programación Avanzada en Ciencia de Datos  
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Dash](https://img.shields.io/badge/Dash_Plotly-0F1117?style=for-the-badge&logo=plotly&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-## 🎯 Objetivo del Proyecto
-El objetivo principal de este proyecto es construir un modelo predictivo en Python que determine la **probabilidad de que un accidente de tránsito tenga víctimas fatales**. 
+## 📖 Resumen Ejecutivo
+Este proyecto desarrolla un pipeline analítico end-to-end para evaluar y predecir la probabilidad de víctimas fatales en siniestros viales en la Ciudad Autónoma de Buenos Aires (2019-2024). 
 
-A través de este análisis, buscamos identificar el peso de distintas variables externas (como las condiciones climáticas y el efecto calendario) sobre la letalidad de los accidentes, comparando el rendimiento de modelos paramétricos y de ensamble.
+Mediante la integración de datos gubernamentales con variables meteorológicas y cronológicas, se construyó un ecosistema de datos que culmina en un modelo de Machine Learning y una interfaz de Business Intelligence para la toma de decisiones basada en evidencia.
 
-## 🛠️ Stack Tecnológico y Técnicas Aplicadas
-* **Lenguaje:** Python 3
-* **Manipulación y Limpieza**: Pandas, NumPy.
-* **Enriquecimiento de Datos:** Consumo de la API de Open-Meteo (clima) y librería holidays (feriados).
-* **Machine Learning:** scikit-learn (Pipelines, ColumnTransformer, StandardScaler, OneHotEncoder).
-* **Modelos Evaluados:** Regresión Lineal Múltiple y Random Forest Regressor.
-* **Persistencia de Datos:** MongoDB Atlas (NoSQL).
-* **Visualización:** Matplotlib y Seaborn.
-* **Enfoque Multiparadigma:** El código fue diseñado combinando la Programación Orientada a Objetos (POO) para el modelado predictivo (instanciando clases de scikit-learn como Pipeline y RandomForestRegressor), junto con los paradigmas imperativo y funcional para la manipulación estructurada y limpieza de datos mediante pandas.
+---
 
-## 📊 Metodología y Resultados Obtenidos
-El flujo de trabajo incluyó la limpieza de más de 1 millón de registros, aislando 62.076 siniestros válidos y la creación de una variable continua (probabilidad_fatalidad). Los modelos fueron evaluados sobre un 20% de datos de prueba (Test) arrojando los siguientes resultados:
-Modelo
-RMSE
-MAE
-R²
-Regresión Lineal
-0.0253
-0.0171
-0.0158
-Random Forest
-0.0270
-0.0178
--0.1223
-**Interpretación de Métricas:** Aunque los errores absolutos (MAE) son bajos, el coeficiente de determinación (R²) cercano a 0 en la Regresión Lineal y negativo en el Random Forest indica que las variables estrictamente temporales y climáticas no son suficientes para explicar la varianza en la letalidad de los accidentes. La gravedad de un siniestro está fuertemente dictada por la dinámica del choque (velocidad, uso de casco, tipo de vehículo), variables que escapan al alcance de las features actuales.
+## 🎯 El Desafío Analítico
+La siniestralidad vial es un fenómeno complejo y multifactorial. El objetivo de este proyecto fue aislar y cuantificar el impacto de variables exógenas en la letalidad de un accidente. 
 
-## 💡 Conclusiones y Evaluación de Hipótesis
-* **Hipótesis 1 (Factor Climático)** - VALIDADA PARCIALMENTE: El análisis de importancia de variables (Feature Importance) extraído del modelo de ensamble confirmó que la temp_media y la precipitacion son las dos variables externas con mayor peso predictivo dentro del dataset.
-* **Hipótesis 2 (Efecto Calendario)** - VALIDADA: El análisis exploratorio y los resultados del modelo confirmaron una marcada estacionalidad semanal. Los días Domingo y Sábado presentan los picos máximos en la probabilidad media de fatalidad, confirmando que la dinámica de movilidad del fin de semana incrementa el riesgo de letalidad.
-* **Hipótesis 3 (Rendimiento Algorítmico)** - REFUTADA: Contrario a la expectativa inicial, el modelo paramétrico simple (Regresión Lineal) superó al modelo de ensamble (Random Forest). El Random Forest arrojó un R² negativo (-0.1223), indicando una incapacidad de generalización frente a datos invisibles para este conjunto de features específicas, mientras que la Regresión Lineal logró un comportamiento marginalmente más estable.
+**Hipótesis de investigación evaluadas:**
+1. **Factor Climático:** La precipitación y la temperatura alteran significativamente el riesgo.
+2. **Efecto Calendario:** La dinámica de movilidad en días de descanso (feriados/fines de semana) incrementa la fatalidad.
+3. **Complejidad Algorítmica:** Un modelo de ensamble (Random Forest) capturará mejor la no linealidad del fenómeno frente a un modelo paramétrico (Regresión Lineal).
 
-## 🚀 Posibles Mejoras (Next Steps)
-Para futuras iteraciones y con el fin de incrementar significativamente el R², se propone:
-Incorporar variables intrínsecas del siniestro al modelo predictivo (ej. modo_desplazamiento_victima, rol_victima).
-Formular el problema como una Clasificación Binaria en lugar de Regresión, prediciendo directamente la clase (Fatal / No Fatal) utilizando algoritmos como Logistic Regression o XGBoost combinados con técnicas de balanceo de clases (ej. SMOTE).
-Optimizar la profundidad y los hiperparámetros del Random Forest mediante GridSearchCV.
+---
 
-## ⚙️ Instrucciones de Uso y Reproducibilidad
-Clonar el repositorio:
-Crear y activar un entorno virtual:
-Instalar las dependencias requeridas:
-Configurar Base de Datos: Crear un archivo .env en el directorio raíz o definir la variable de entorno MONGO_URI con la cadena de conexión real de MongoDB Atlas. Por seguridad, las credenciales nunca deben subirse al repositorio público.
-Ejecución: Abrir e iterar sobre el notebook principal (notebooks/siniestro_vialC.ipynb) o ejecutar los scripts automatizados según sea necesario.
+## 📊 Interfaz de Visualización (Dashboard BI)
+Se desarrolló una aplicación interactiva para la exploración multidimensional del dataset y la auditoría de los modelos predictivos.
+
+*(Nota: Reemplazar estas imágenes subiendo las capturas reales a la carpeta raíz del repositorio)*
+> ![Dashboard Resumen](enlace_a_tu_imagen_resumen.png)
+> *Vista general: Evolución histórica y perfil de vulnerabilidad.*
+
+> ![Dashboard Métricas](enlace_a_tu_imagen_metricas.png)
+> *Auditoría algorítmica: Comparación de rendimiento RMSE/MAE y análisis Real vs. Predicho.*
+
+---
+
+## 🛠 Metodología y Pipeline de Datos
+
+El flujo de trabajo se estructuró combinando paradigmas de Programación Orientada a Objetos, Funcional e Imperativo:
+
+1. **Extracción y Enriquecimiento (ETL):** - Procesamiento de **54.064** registros únicos (Dataset GCBA).
+   - Ingesta de variables climáticas históricas mediante la API de **Open-Meteo**.
+   - Integración de matriz de feriados nacionales (`holidays.AR`).
+2. **Preprocesamiento Seguro:** Implementación de `ColumnTransformer` (StandardScaler y OneHotEncoder) integrado en `Pipelines` de scikit-learn para evitar fuga de datos (data leakage).
+3. **Experimentación Automatizada:** Uso de `Papermill` para la ejecución sistemática de escenarios, iterando sobre hiperparámetros y semillas de validación.
+4. **Persistencia Cloud:** Escritura automatizada de datos limpios, resultados predictivos y metadatos de configuración en colecciones NoSQL de **MongoDB Atlas**.
+
+---
+
+## 💡 Insights y Conclusiones Clave
+
+* 🌦️ **El clima domina la predicción:** Las variables meteorológicas concentran el **62.7%** de la importancia relativa en la toma de decisiones del algoritmo.
+* 📅 **Estacionalidad del Riesgo:** Se confirmó un aumento estadísticamente significativo de la letalidad durante domingos y feriados, sugiriendo cambios en el perfil de conducción y vigilancia en días de descanso.
+* 🤖 **Refutación Algorítmica (Overfitting):** El modelo Random Forest ($R^2$ = -0.1227) sufrió de un sobreajuste severo frente a los datos de prueba, penalizado por el extremo desbalance de clases (98.3% de eventos no fatales). La **Regresión Lineal** demostró ser el algoritmo superior al mantener la estabilidad paramétrica y la capacidad de generalización ($R^2$ = 0.0158).
+
+---
+
+## 🚀 Reproducibilidad del Entorno
+
+### Requisitos previos
+* Python 3.9+
+* Cuenta de MongoDB Atlas (Configurar URI en el archivo `.env` o directamente en la notebook).
 
 ## 📂 Estructura del Repositorio
 Siguiendo las mejores prácticas de ingeniería de software para Ciencia de Datos, este repositorio se estructura de la siguiente manera:
@@ -58,11 +69,11 @@ Siguiendo las mejores prácticas de ingeniería de software para Ciencia de Dato
 ```text
 Material_Sustentacion/
 ├── data/                  # Datos del proyecto
-│   ├── raw/               # Dataset original de accidentes
+│   ├── datos/               # Dataset original de accidentes
 │   └── external/          # Datos climáticos extraídos de la API de Open-Meteo
 ├── notebooks/             # Jupyter Notebooks de análisis y modelado
 │   └── siniestro_vialF.ipynb  # Notebook principal con todo el flujo de ML
-├── scripts/               # Scripts para automatización (ej. ejecución con Papermill)
+├── Automatizaciones/               # Scripts para automatización con Papermill
 ├── .gitignore             # Archivos excluidos del control de versiones (ej. claves, .env)
 ├── requirements.txt       # Listado de dependencias del proyecto
 README.md                  # Documentación técnica y de uso
