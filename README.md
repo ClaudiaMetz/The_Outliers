@@ -57,7 +57,7 @@ El flujo de trabajo se estructuró combinando paradigmas de Programación Orient
 
 * 🌦️ **El clima domina la predicción:** Las variables meteorológicas concentran el **62.7%** de la importancia relativa en la toma de decisiones del algoritmo.
 * 📅 **Estacionalidad del Riesgo:** Se confirmó un aumento estadísticamente significativo de la letalidad durante domingos y feriados, sugiriendo cambios en el perfil de conducción y vigilancia en días de descanso.
-* 🤖 **Refutación Algorítmica (Overfitting):** El modelo Random Forest ($R^2$ = -0.1227) sufrió de un sobreajuste severo frente a los datos de prueba, penalizado por el extremo desbalance de clases (98.3% de eventos no fatales). La **Regresión Lineal** demostró ser el algoritmo superior al mantener la estabilidad paramétrica y la capacidad de generalización ($R^2$ = 0.0158).
+* 🤖 **Refutación Algorítmica (Overfitting):** El modelo Random Forest ($R^2$ = -0.1227) sufrió de un sobreajuste severo frente a los datos de prueba, penalizado por el extremo desbalance de clases (99.02% de eventos no fatales). La **Regresión Lineal** demostró ser el algoritmo superior al mantener la estabilidad paramétrica y la capacidad de generalización ($R^2$ = 0.0158).
 
 ---
 
