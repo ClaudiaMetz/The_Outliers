@@ -1,54 +1,96 @@
-**Equipo:** The Outliers 📊 
+# 🚦 Análisis y Predicción de Siniestralidad Vial (CABA)
+**Proyecto Final - Programación Avanzada en Ciencia de Datos | The Outliers**
 
-Integrantes:
-* Claudia 
-* Marianela 
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Dash](https://img.shields.io/badge/Dash_Plotly-0F1117?style=for-the-badge&logo=plotly&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlebard&logoColor=white)
 
-# **Proyecto:** Trabajo Final Integrador - Modelos Predictivos  
+## 📖 Resumen Ejecutivo
+Este proyecto desarrolla un pipeline analítico end-to-end para evaluar y predecir la probabilidad de víctimas fatales en siniestros viales en la Ciudad Autónoma de Buenos Aires (2019-2024). 
 
-## 🎯 Objetivo del Proyecto
-El objetivo principal de este proyecto es desarrollar y comparar modelos de Machine Learning (Regresión Lineal Múltiple y Random Forest) capaces de predecir la cantidad diaria de siniestros viales en base a factores ambientales y temporales.
+Mediante la integración de datos gubernamentales con variables meteorológicas y cronológicas, se construyó un ecosistema de datos que culmina en un modelo de Machine Learning y una interfaz de Business Intelligence para la toma de decisiones basada en evidencia.
 
-Se busca identificar qué variables externas inciden con mayor peso en la frecuencia de accidentes para generar un modelo predictivo robusto, cuyas métricas de rendimiento (RMSE, MAE, R²) serán registradas en una base de datos documental (MongoDB Atlas) para su auditoría y comparación.
+---
 
-## 2. Hipótesis Iniciales
-Antes de la fase de modelado, establecemos las siguientes hipótesis rectoras que serán evaluadas empíricamente:
+## 🎯 El Desafío Analítico
+La siniestralidad vial es un fenómeno complejo y multifactorial. El objetivo de este proyecto fue aislar y cuantificar el impacto de variables exógenas en la letalidad de un accidente. 
 
-* **Hipótesis 1 (Factor Climático):** Las precipitaciones (lluvia) tienen una correlación positiva fuerte con el aumento de la cantidad diaria de siniestros, debido a la reducción de visibilidad y adherencia en la calzada.
-* **Hipótesis 2 (Efecto Calendario):** Existe una marcada estacionalidad semanal. La volumetría de siniestros durante los fines de semana y feriados difiere significativamente de los días laborables debido a los cambios en la dinámica de movilidad urbana.
-* **Hipótesis 3 (Rendimiento Algorítmico):** Dada la probable existencia de relaciones no lineales entre las variables (ej. el efecto combinado de lluvia durante un fin de semana), se espera que el modelo de ensamble basado en árboles (*Random Forest*) supere al modelo paramétrico (*Regresión Lineal*) en las métricas de evaluación.
+**Hipótesis de investigación evaluadas:**
+1. **Factor Climático:** La precipitación y la temperatura alteran significativamente el riesgo.
+2. **Efecto Calendario:** La dinámica de movilidad en días de descanso (feriados/fines de semana) incrementa la fatalidad.
+3. **Complejidad Algorítmica:** Un modelo de ensamble (Random Forest) capturará mejor la no linealidad del fenómeno frente a un modelo paramétrico (Regresión Lineal).
 
-* **Extracción de Datos Externa:** API de Open-Meteo (Datos climáticos históricos).
-* **Análisis y Manipulación de Datos:** Pandas, NumPy, Holidays (Argentina).
-* **Machine Learning:** Scikit-Learn (Pipelines, ColumnTransformer, StandardScaler, OneHotEncoder).
-* **Base de Datos NoSQL:** MongoDB Atlas (Cloud) mediante PyMongo.
-* **Visualización e Interfaz:** Streamlit (Presentación interactiva), Matplotlib, Seaborn.
-* **Control de Versiones:** Git / GitHub.
+---
 
-## 🏗️ Ingeniería de Características (Feature Engineering)
-Para optimizar la capacidad predictiva del modelo, se transformó la variable temporal original para capturar patrones de comportamiento:
-* **Variables Climáticas:** Temperatura media diaria y acumulado de precipitaciones (API).
-* **Variables de Calendario:** Extracción de mes y día de la semana.
-* **Variables Binarias:** Detección automática de feriados nacionales (Argentina) y fines de semana para evaluar el impacto de la movilidad urbana.
+## 📊 Interfaz de Visualización (Dashboard BI)
+Se desarrolló una aplicación interactiva para la exploración multidimensional del dataset y la auditoría de los modelos predictivos.
 
-## 🗄️ Almacenamiento NoSQL (Cloud Architecture)
-Se implementó un clúster en la nube con **MongoDB Atlas**, permitiendo la persistencia centralizada y el acceso global (IP 0.0.0.0/0) para la colaboración del equipo. El esquema documental se organiza en:
-* `datos_entrada`: Dataset consolidado diario con clima y siniestros.
-* `resultados_modelo`: Log de métricas RMSE, MAE y R² por ejecución.
-* `configuracion`: Parámetros técnicos de los modelos entrenados.
+> ![Dashboard Resumen](https://github.com/Marian2057/The_Outliers/blob/main/Material_Sustentacion/Dashboard/Pantalla-1.JPG)
+> *Vista general: Evolución histórica y perfil de vulnerabilidad.*
+>
+> ![Dashboard Resumen](https://github.com/Marian2057/The_Outliers/blob/main/Material_Sustentacion/Dashboard/Pantalla-2.JPG)
+> *Clima y Calendario: Probabilidad de fatalidad promedio: Laborales vs Fines de Semanas vs Feriados.*
+
+> ![Dashboard Métricas](https://github.com/Marian2057/The_Outliers/blob/main/Material_Sustentacion/Dashboard/Pantalla-3.JPG)
+> *Evaluación algorítmica: Comparación de rendimiento RMSE/MAE y análisis Real vs. Predicho.*
+
+---
+
+## 🛠 Metodología y Pipeline de Datos
+
+El flujo de trabajo se estructuró combinando paradigmas de Programación Orientada a Objetos, Funcional e Imperativo:
+
+1. **Extracción y Enriquecimiento (ETL):** - Procesamiento de **54.064** registros únicos (Dataset GCBA).
+   - Ingesta de variables climáticas históricas mediante la API de **Open-Meteo**.
+   - Integración de matriz de feriados nacionales (`holidays.AR`).
+2. **Preprocesamiento Seguro:** Implementación de `ColumnTransformer` (StandardScaler y OneHotEncoder) integrado en `Pipelines` de scikit-learn para evitar fuga de datos (data leakage).
+3. **Experimentación Automatizada:** Uso de `Papermill` para la ejecución sistemática de escenarios, iterando sobre hiperparámetros y semillas de validación.
+4. **Persistencia Cloud:** Escritura automatizada de datos limpios, resultados predictivos y metadatos de configuración en colecciones NoSQL de **MongoDB Atlas**.
+
+---
+
+## 💡 Insights y Conclusiones Clave
+
+* 🌦️ **El clima domina la predicción:** Las variables meteorológicas concentran el **62.7%** de la importancia relativa en la toma de decisiones del algoritmo.
+* 📅 **Estacionalidad del Riesgo:** Se confirmó un aumento estadísticamente significativo de la letalidad durante domingos y feriados, sugiriendo cambios en el perfil de conducción y vigilancia en días de descanso.
+* 🤖 **Refutación Algorítmica (Overfitting):** El modelo Random Forest ($R^2$ = -0.1227) sufrió de un sobreajuste severo frente a los datos de prueba, penalizado por el extremo desbalance de clases (99.02% de eventos no fatales). La **Regresión Lineal** demostró ser el algoritmo superior al mantener la estabilidad paramétrica y la capacidad de generalización ($R^2$ = 0.0158).
+
+---
+
+## 🚀 Reproducibilidad del Entorno
+
+### Requisitos previos
+* Python 3.9+
+* Cuenta de MongoDB Atlas (Configurar URI en el archivo `.env` o directamente en la notebook).
+
+## Declaración de Uso de Herramientas de IA 
+En cumplimiento con los lineamientos de la asignatura, el equipo declara que se utilizaron asistentes de Inteligencia Artificial (Claude, Gemini) exclusivamente como herramienta de apoyo para la generación de boilerplate de código y asistencia en la redacción y estructuración de este documento. Todo el diseño experimental, la toma de decisiones técnicas, el análisis de las métricas y la justificación de las hipótesis presentadas son de autoría propia y exclusiva del equipo "The Outliers"
+
 
 ## 📂 Estructura del Repositorio
-```text
-├── data/
-│   ├── siniestros_limpios.csv      # Dataset preprocesado
-├── notebooks/
-│   ├── 01_ETL_y_EDA.ipynb          # Extracción, limpieza y exploración
-│   ├── 02_Modelos_Machine_Learning.ipynb # Entrenamiento y evaluación
-├── scripts/
-│   ├── db_connection.py            # Script de conexión y carga a MongoDB
-├── app.py                          # Aplicación interactiva de Streamlit
-├── requirements.txt                # Dependencias del proyecto
-└── README.md                       # Documentación
+Siguiendo las mejores prácticas de ingeniería de software para Ciencia de Datos, este repositorio se estructura de la siguiente manera:
 
+```text
+Material_Sustentacion/
+├── data/                        # Datos del proyecto
+│   ├── datos/                   # Dataset original de accidentes
+│   └── external/                # Datos climáticos extraídos de la API de Open-Meteo
+├── notebooks/                   # Jupyter Notebooks de análisis y modelado
+│   └── siniestro_vialF.ipynb    # Notebook principal con todo el flujo de ML
+├── Automatizaciones/            # Scripts para automatización con Papermill
+│   ├── resultado_exp_1          # Resultado de la automatización 1
+│   └── resultado_exp_2          # Resultado de la automatización 2
+│   └── resultado_exp_3          # Resultado de la automatización 3
+├── .gitignore                   # Archivos excluidos del control de versiones (ej. claves, .env)
+├── requirements.txt             # Listado de dependencias del proyecto
+├── Dashboard/                   # Capturas de las pantallas del dashboard
+├── Informe/                     # Documentación
+│   └── Informe del proyecto     # Informe del preoyecto
+│   └── presentacion             # Presentación
+README.md                        # Documentación técnica y de uso
 
 
